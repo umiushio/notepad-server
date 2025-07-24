@@ -1,0 +1,22 @@
+[package]
+name = "notes-sync-server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.11"
+actix-identity = "0.8"
+jsonwebtoken = "9.3"
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+argon2 = { version = "0.5", features = ["std"] }  # 密码哈希
+dotenv = "0.15" # 环境变量
+uuid = { version = "1.17", features = ["serde", "v4"] }
+sqlx = { version = "0.8", features = ["postgres", "runtime-tokio-native-tls", "chrono", "uuid"] }
+derive_more = "2.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt", "ansi", "json", "chrono"] }
+tracing-appender = "0.2"
+tokio = { version = "1.45", features = ["rt", "macros", "time"] }
+actix-web-httpauth = "0.8.2"
